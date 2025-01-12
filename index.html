@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <style>
+        /* Definindo um fundo suave e estilização da fonte */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Estilização do container do formulário */
+        .form-container {
+            width: 80%;
+            margin: 40px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            color: #5c6bc0;
+            margin-top:1%;
+            font-size: 24px;
+        }
+
+        /* Estilizando os labels */
+        label {
+            font-size: 16px;
+            color: #555;
+            margin-top: 1%;
+            display: block;
+        }
+
+        /* Estilizando os campos de entrada */
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="search"],
+        input[type="color"],
+        input[type="file"],
+        select,
+        textarea {
+            width: 90%;
+            margin-top: 1%;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: #fafafa;
+            transition: border-color 0.3s ease;
+        }
+
+        /* Focando no campo de entrada */
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="number"]:focus,
+        input[type="tel"]:focus,
+        input[type="date"]:focus,
+        input[type="search"]:focus,
+        input[type="color"]:focus,
+        input[type="file"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #5c6bc0;
+            outline: none;
+        }
+
+        /* Botões */
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: #5c6bc0;
+            color: white;
+            border: none;
+            margin-top:1%;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        /* Efeito de hover nos botões */
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: #3f51b5;
+        }
+
+        /* Estilo para o campo de upload */
+        input[type="file"] {
+            padding: 10px;
+            background-color: #e3f2fd;
+        }
+
+        /* Estilizando o campo de texto */
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Estilizando a barra de rolagem do select */
+        select {
+            padding: 12px;
+            font-size: 16px;
+        }
+
+        /* Layout responsivo */
+        @media (max-width: 600px) {
+            .form-container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>Formulário de Inscrição</h1>
+
+        <form action="#" method="post">
+            <label for="texto">Nome:</label>
+            <input type="text" id="texto" name="texto" placeholder="Insira Seu Nome" required>
+
+            <label for="numero">Idade:</label>
+            <input type="number" id="numero" name="numero" placeholder="Insira sua idade" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Insira seu Email" required>
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" pattern="\(\d{2}\) \d{4,5}-\d{4}" required>
+
+            <label for="data">Data de Nascimento:</label>
+            <input type="date" id="data" name="data" placeholder="Insira Sua Data de Nascimento" required>
+
+            <label for="teste">Pesquisa:</label>
+            <input type="search" id="teste" name="teste" placeholder="Campo de Pesquisa">
+
+            <label for="check">
+                <input type="checkbox" id="check" name="termos" required> Eu aceito os termos
+            </label>
+
+            <label for="sim">
+                <input type="radio" id="sim" name="opcao" value="Sim"> Sim
+            </label>
+            <label for="nao">
+                <input type="radio" id="nao" name="opcao" value="Nao"> Não
+            </label>
+
+            <label for="input-cor">Selecione uma cor:</label>
+            <input type="color" id="input-cor" name="cor">
+
+            <label for="input-arquivo">Selecione um arquivo:</label>
+            <input type="file" id="input-arquivo" name="arquivo" accept=".mp3, .mp4, .wav, .png" multiple>
+
+            <label for="range">Escolha um valor:</label>
+            <input type="range" id="range" name="range" min="0" max="10" step="1">
+
+            <label for="textinhobloco">Mensagem:</label>
+            <textarea id="textinhobloco" name="textobloco" placeholder="Digite sua mensagem aqui"></textarea>
+
+            <label for="opcoes">Escolha suas opções:</label>
+            <select id="opcoes" name="options" multiple required>
+                <option value="1">Opção 1</option>
+                <option value="2">Opção 2</option>
+                <option value="3">Opção 3</option>
+            </select>
+
+            <label for="address">Endereço:</label>
+            <input type="text" id="address" name="address" placeholder="Insira seu endereço">
+
+            <label for="city">Cidade:</label>
+            <input type="text" id="city" name="city" placeholder="Insira sua cidade">
+
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep" placeholder="Insira seu CEP" pattern="\d{5}-\d{3}">
+
+            <label for="estado">Estado:</label>
+            <select id="estado" name="estado">
+                <option value="sp">São Paulo</option>
+                <option value="rj">Rio de Janeiro</option>
+                <option value="mg">Minas Gerais</option>
+                <option value="pr">Paraná</option>
+            </select>
+
+            <label for="complemento">Complemento:</label>
+            <input type="text" id="complemento" name="complemento" placeholder="Complemento (opcional)">
+
+            <label for="site">Site:</label>
+            <input type="url" id="site" name="site" placeholder="Insira o seu site">
+
+            <label for="data-evento">Data do Evento:</label>
+            <input type="date" id="data-evento" name="data-evento">
+
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </form>
+    </div>
+
+</body>
+</html>
